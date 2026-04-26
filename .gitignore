@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+runs/*
+!runs/.gitkeep
+data/
+*.csv
+*.parquet
+*.npy
+*.npz

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amgla"
+version = "0.1.0"
+description = "TimesFM-based AMGLA pipeline for cold-start financial product sales forecasting."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "AMGLA authors" }
+]
+dependencies = [
+  "numpy>=1.23",
+  "pandas>=2.0"
+]
+
+[project.optional-dependencies]
+timesfm = [
+  "torch>=2.0"
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6"
+]
+
+[tool.setuptools.packages.find]
+include = ["amgla*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
